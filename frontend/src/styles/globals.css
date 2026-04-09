@@ -1,0 +1,94 @@
+/* EmoShield — Global Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #030712;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #334155; }
+}
+
+@layer components {
+
+  /* ── Cards ─────────────────────────────────── */
+  .card {
+    @apply bg-slate-900 border border-slate-800 rounded-2xl p-6;
+  }
+  .card-sm {
+    @apply bg-slate-900 border border-slate-800 rounded-xl p-4;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-slate-700 hover:bg-slate-800/70;
+  }
+
+  /* ── Buttons ───────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           font-semibold rounded-xl transition-all duration-150
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+  .btn-primary {
+    @apply btn bg-teal-600 hover:bg-teal-500 text-white
+           px-5 py-2.5 focus:ring-teal-500;
+  }
+  .btn-secondary {
+    @apply btn bg-slate-800 hover:bg-slate-700 text-slate-200
+           border border-slate-700 px-5 py-2.5 focus:ring-slate-500;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 hover:bg-red-500 text-white
+           px-5 py-2.5 focus:ring-red-500;
+  }
+  .btn-ghost {
+    @apply btn text-slate-400 hover:text-slate-200 hover:bg-slate-800
+           px-4 py-2 focus:ring-slate-500;
+  }
+
+  /* ── Inputs ────────────────────────────────── */
+  .input {
+    @apply w-full bg-slate-800 border border-slate-700 rounded-xl
+           px-4 py-2.5 text-slate-100 placeholder-slate-500 text-sm
+           focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500
+           transition-colors duration-150;
+  }
+
+  /* ── Risk badges ───────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold
+           px-2.5 py-1 rounded-full border;
+  }
+  .badge-high   { @apply bg-red-500/15 text-red-400 border-red-500/30; }
+  .badge-medium { @apply bg-amber-500/15 text-amber-400 border-amber-500/30; }
+  .badge-low    { @apply bg-emerald-500/15 text-emerald-400 border-emerald-500/30; }
+
+  /* ── Platform pills ────────────────────────── */
+  .platform-gmail     { @apply bg-red-500/10 text-red-400 border-red-500/20; }
+  .platform-whatsapp  { @apply bg-green-500/10 text-green-400 border-green-500/20; }
+  .platform-instagram { @apply bg-pink-500/10 text-pink-400 border-pink-500/20; }
+  .platform-sms       { @apply bg-blue-500/10 text-blue-400 border-blue-500/20; }
+  .platform-manual    { @apply bg-slate-500/10 text-slate-400 border-slate-500/20; }
+}
+
+/* ── Animations ────────────────────────────────── */
+@keyframes fadeIn   { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes shimmer  { 0%{background-position:-200%} 100%{background-position:200%} }
+@keyframes spin-slow { to { transform: rotate(360deg) } }
+
+.animate-fade-in { animation: fadeIn 0.25s ease-out both; }
+.animate-shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

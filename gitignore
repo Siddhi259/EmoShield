@@ -1,0 +1,51 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+env/
+.venv/
+
+# ── Environment files — NEVER commit these ────────────────────────────────────
+.env
+backend/.env
+frontend/.env
+*.env
+
+# ── Google credentials — NEVER commit ────────────────────────────────────────
+credentials.json
+token.json
+service_account.json
+*_credentials.json
+
+# ── Node / React ──────────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/build/
+
+# ── ML models ─────────────────────────────────────────────────────────────────
+*.pkl
+*.h5
+*.model
+*.pt
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ── Database local data ───────────────────────────────────────────────────────
+data/db/
