@@ -82,80 +82,14 @@ emoshield/                          ← ROOT of GitHub repo
 
 ---
 
-## 🚀 Local Setup (Step by Step)
-
-### Step 1 — Clone
-```bash
-git clone https://github.com/YOUR-USERNAME/emoshield.git
-cd emoshield
-```
-
-### Step 2 — Backend
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-venv\Scripts\activate        # Windows
-source venv/bin/activate     # Mac/Linux
-
-# Install packages
-pip install -r requirements.txt
-
-# Setup environment
-copy .env.example .env       # Windows
-cp .env.example .env         # Mac/Linux
-# → Fill in .env (see docs/setup_guide.md)
-
-# Run server
-uvicorn main:app --reload --port 8000
-# Open: http://localhost:8000/docs
-```
-
-### Step 3 — Frontend
-```bash
-# New terminal
-cd frontend
-npm install
-
-copy .env.example .env      # Windows
-cp .env.example .env        # Mac/Linux
-# → Fill VITE_API_URL=http://localhost:8000
-
-npm run dev
-# Open: http://localhost:3000
-```
-
----
-
-## 📤 Git Push Commands
-
-### First time
-```bash
-git init
-git add .
-git commit -m "🛡 Initial commit: EmoShield v1.0"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/emoshield.git
-git push -u origin main
-```
-
-### Every update
-```bash
-git add .
-git commit -m "describe what you changed"
-git push
-```
-
----
 
 ## 🌐 Deployment
 
 | Service | What to deploy | Cost |
 |---|---|---|
-| [Render.com](https://render.com) | Backend (FastAPI) | Free |
-| [Vercel.com](https://vercel.com) | Frontend (React) | Free |
-| [MongoDB Atlas](https://cloud.mongodb.com) | Database | Free |
+| [Render.com](https://render.com) | Backend (FastAPI) | 
+| [Vercel.com](https://vercel.com) | Frontend (React) | 
+| [MongoDB Atlas](https://cloud.mongodb.com) | Database | 
 
 See `docs/deployment.md` for step-by-step instructions.
 
@@ -165,12 +99,12 @@ See `docs/deployment.md` for step-by-step instructions.
 
 | Key | Get From | Required? |
 |---|---|---|
-| Google Client ID + Secret | console.cloud.google.com | ✅ Yes |
-| MongoDB Connection URL | cloud.mongodb.com | ✅ Yes |
-| JWT Secret Key | Any random 32+ char string | ✅ Yes |
+| Google Client ID + Secret | console.cloud.google.com |
+| MongoDB Connection URL | cloud.mongodb.com |
+| JWT Secret Key | Any random 32+ char string |
 | Twilio (SMS OTP) | twilio.com | Optional |
-| Instagram App | developers.facebook.com | Optional |
-| WhatsApp Business | developers.facebook.com | Optional |
+| Instagram App | developers.facebook.com |
+| WhatsApp Business | developers.facebook.com |
 
 ---
 
